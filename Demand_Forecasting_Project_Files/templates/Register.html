@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedLink AI | Professional Onboarding</title>
+    <link rel="stylesheet" href="../static/Login_style.css">
+    <style>
+        /* Specific adjustments for the multi-input registration form */
+        .input-row { 
+            display: flex; 
+            gap: 1.2rem; 
+            margin-bottom: 1.2rem;
+        }
+        .input-row .input-group { 
+            flex: 1; 
+            margin-bottom: 0; 
+        }
+        /* Make the card slightly wider to accommodate two columns */
+        .glass-card { 
+            max-width: 600px; 
+            max-height: 95vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+        }
+        /* Custom scrollbar for the glass card */
+        .glass-card::-webkit-scrollbar { width: 5px; }
+        .glass-card::-webkit-scrollbar-thumb { background: rgba(30, 64, 175, 0.2); border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="branding">
+                <div class="logo-icon">✦</div>
+                <h1>MedLink AI</h1>
+                <p>Register your professional credentials to calibrate the LSTM forecasting engine for your specific facility and department.</p>
+                <div class="stats-badge">System Status: Ready for Calibration</div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="glass-card">
+                <form id="regForm">
+                    <h2>Professional Profile</h2>
+                    <p class="subtitle">Complete all fields to initialize your forecasting dashboard.</p>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Employee ID</label>
+                            <input type="text" placeholder="EMP-2026-X" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Facility Name</label>
+                            <input type="text" placeholder="e.g. Mayo Clinic" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Department</label>
+                            <select class="custom-select">
+                                <option>Pharmacy</option>
+                                <option>Surgical Units</option>
+                                <option>Emergency / ICU</option>
+                                <option>Procurement</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Inventory Category</label>
+                            <select class="custom-select">
+                                <option>Injectables (Syringes)</option>
+                                <option>Critical Medications</option>
+                                <option>PPE & Consumables</option>
+                                <option>Life Support Equipment</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Forecast Frequency</label>
+                            <select class="custom-select">
+                                <option>Daily Updates</option>
+                                <option>Weekly Reports</option>
+                                <option>Monthly Trends</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Professional Email</label>
+                        <input type="email" placeholder="name@organization.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Create a secure password" required>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="btn">Finalize Registration</button>
+                    
+                    <p class="signup-text">Already have an account? <a href="login.html">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            
+            // Simulating a data save to local storage
+            localStorage.setItem('user_profile', JSON.stringify({
+                name: name,
+                status: 'registered'
+            }));
+
+            const btn = document.getElementById('btn');
+            btn.innerText = "Creating AI Profile...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("Registration Successful! Profile created for " + name);
+                window.location.href = 'login.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
