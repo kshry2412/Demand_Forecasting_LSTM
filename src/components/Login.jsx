@@ -17,7 +17,7 @@ const Login = ({ onSwitch }) => {
             <div className="left-side">
                 <div className="branding">
                     <h1>MedLink AI</h1>
-                    <p>Advanced Demand Forecasting. Utilizing LSTM models to optimize medical supply chains.</p>
+                    <p>Advanced Demand Forecasting. Utilizing AI models to optimize medical supply chains.</p>
                     <div className="stats-badge">Neural Network Status: Active</div>
                 </div>
             </div>
@@ -46,5 +46,6 @@ const Login = ({ onSwitch }) => {
         </div>
     );
 };
+
 
 export default Login;
