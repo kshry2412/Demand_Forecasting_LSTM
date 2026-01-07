@@ -3,8 +3,9 @@
       Also the data required should be sequenctial, can be changed according to the need.
       
       To run main.py in the terminal write:
+            ```bash
             python main.py
-      
+            ```
       The error percentage of the LSTM model is ~10%.(It can vary with each training)
       
 
@@ -16,9 +17,10 @@
       Ensure you have Node.js (LTS version) installed on your system.
       
             Check version: node -v
+         
             Check npm: npm -v
       
-      2. Installation Commands
+      3. Installation Commands
       Open your terminal in the project root directory and run the following:
       
             npm install
